@@ -1,0 +1,72 @@
+.dashboard-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+
+  .content-container {
+    text-align: center;
+
+    .text-container {
+      background-color: rgba(255, 255, 255, 0.500); /* Fondo translúcido */
+      padding: 20px;
+      color: #212121;
+      font-size: medium;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: floatAnimation 3s ease-in-out infinite alternate; /* Animación */
+
+      img.profile-image {
+        width: 120px; /* Tamaño deseado para la imagen de perfil */
+        height: 120px; /* Tamaño deseado para la imagen de perfil */
+        border-radius: 50%; /* Hace que la imagen sea circular */
+        object-fit: cover; /* La imagen se ajustará para cubrir todo el contenedor */
+        border: 2px solid #007bff; /* Borde de la imagen de perfil */
+      }
+
+      button {
+        padding: 5px 10px; /* Reducir el padding para hacer el botón más pequeño */
+        font-size: 14px; /* Reducir el tamaño de la fuente */
+        font-weight: 600;
+        background-color: #007bff; /* Azul oscuro elegante */
+        color: #ffffff; /* Blanco para el texto */
+        border: 2px solid #007bff; /* Borde sólido del mismo color que el fondo */
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transiciones suaves */
+        outline: none; /* Eliminar el borde al hacer clic */
+
+        &:hover {
+          background-color: #0056b3; /* Azul más claro al pasar el mouse */
+          border-color: #0056b3; /* Borde del mismo color que el fondo al pasar el mouse */
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 2px #007bff; /* Efecto de resaltado al enfocar */
+        }
+
+        &:active {
+          background-color: #00408a; /* Azul más oscuro al hacer clic */
+          border-color: #00408a; /* Borde del mismo color que el fondo al hacer clic */
+        }
+      }
+
+      .map-container {
+        height: 300px;
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10px); /* Ajustado para un efecto más notable */
+  }
+}

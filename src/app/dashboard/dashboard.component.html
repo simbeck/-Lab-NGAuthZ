@@ -1,0 +1,12 @@
+<div class="dashboard-container">
+  <div class="content-container">
+    <div class="text-container">
+      <img src="{{ userImagen }}" alt="Imagen de perfil" class="profile-image">
+      <p>Hola <span>{{ userName }}</span>,</p>
+      <p>Hoy es <span>{{ fecha }}</span> y son las <span>{{ hora }}</span>.</p>
+      <p>{{ textoMotivacional }}</p>
+      <p>{{ textoDespedida }}</p>
+      <button (click)="logout()">{{ textoCerrarSesion }}</button>
+    </div>
+  </div>
+</div>

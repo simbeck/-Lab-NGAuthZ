@@ -1,0 +1,50 @@
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+<div class="login-container">
+  <form (ngSubmit)="login()" class="login-form">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Por favor, ingresa tu correo electrónico">
+        <nz-input-group nzPrefixIcon="mail">
+          <input type="email" nz-input placeholder="Correo electrónico" [(ngModel)]="email" name="email" required>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Por favor, ingresa tu contraseña">
+        <nz-input-group nzPrefixIcon="lock">
+          <input type="password" nz-input placeholder="Contraseña" [(ngModel)]="password" name="password" required>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <!-- Mensaje de error -->
+    <div *ngIf="loginError" class="error-message">
+      Credenciales incorrectas. Por favor, intenta de nuevo.
+    </div>
+      
+    <nz-form-item>
+      <button nz-button nzType="primary" nzBlock>Iniciar sesión</button>
+    </nz-form-item>
+  </form>
+</div>
+
+<div class="users-container">
+  <table>
+    <caption>Usuarios disponibles y existentes</caption>
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Nombre</th>
+        <th>Contraseña</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.email }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.password }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
