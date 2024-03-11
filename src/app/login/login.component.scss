@@ -1,0 +1,107 @@
+// login.component.scss
+
+// Estilos para el contenedor del formulario de inicio de sesión
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/assets/images/login-background.png'); // Agrega la imagen de fondo
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 100vh;
+
+  /* Efecto de superposición */
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7); /* Ajusta la opacidad según necesites */
+    z-index: 0;
+  }
+}
+
+// Estilos para el formulario de inicio de sesión
+.login-form {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  button {
+    transition: background-color 0.3s ease-in-out;
+    &:hover {
+      background-color: darken(#007bff, 5%);
+    }
+  }
+  position: relative;
+  z-index: 1; /* Asegura que el formulario se muestre sobre el efecto de superposición */
+  max-width: 350px; /* Ajuste para acomodar mejor los elementos internos */
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.85); /* Fondo del formulario semi-transparente */
+  border-radius: 8px;
+
+  .error-message {
+    color: #d32f2f;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  nz-form-item {
+    margin-bottom: 16px;
+  }
+}
+
+// Estilos adicionales para dispositivos móviles
+@media (max-width: 600px) {
+  .login-form {
+    padding: 1rem;
+    max-width: 100%;
+  }
+}
+
+.users-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 10px;
+  width: auto;
+  max-width: 300px;
+  font-size: 0.75rem; // Hace el texto más pequeño y discreto
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 10;
+  font-family: 'Montserrat', sans-serif; // Asegura que la fuente sea Montserrat
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    caption {
+      margin-bottom: 0.4rem; // Añade un margen inferior para separar el caption de la tabla
+      font-weight: bold;
+      font-size: 0.8rem;
+      background-color: rgba(37, 155, 223, 0.164);
+      color: #212121;
+      padding: 0.5em;
+      box-sizing: border-box;
+      caption-side: top;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px; // Ajuste para mejorar la legibilidad
+      border-bottom: 1px solid #ddd; // Añade una línea sutil entre filas
+    }
+
+    th {
+      background-color: #f0f0f0; // Un fondo sutil para los encabezados
+      color: #333;
+    }
+  }
+}
